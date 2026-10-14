@@ -619,7 +619,11 @@ let last=0;
 function loop(t){const dt=Math.min((t-last)/1000||0,.05);last=t;
   if(R){update(dt);renderRace(dt)}else renderShow(dt);
   requestAnimationFrame(loop)}
-resize();garage();requestAnimationFrame(loop);
+window.addEventListener('load', () => {
+  resize();
+  garage();
+  requestAnimationFrame(loop);
+});
 </script>
 </body>
 </html>
