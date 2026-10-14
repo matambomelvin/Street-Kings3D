@@ -309,7 +309,12 @@ function scenery(){
 const cost=l=>2500*(l+1);
 function garage(){
   R=null;rainSnd(false);wrap.className='gar';ui.style.display='block';
+  wrap.style.height='340px';
+  setShow();
+  resize();
   ['hud','pm','end','pz'].forEach(i=>$(i).style.display='none');$('tc').className='';
+
+  
   const id=S.cur,u=upOf(id),nm=['Engine','Tires','Nitro'];
   ui.innerHTML=`<div class="bar"><span class="money">${fmt(S.money)}</span>
   <button class="alt" onclick="race('free')">Free mode</button>
